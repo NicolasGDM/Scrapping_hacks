@@ -57,7 +57,8 @@ for user in toquery_sn:
 		res=jsonResponse.decode().split('\n')
 		try :
 			nfriends=[int(''.join(i.split('"count">')[1].split('</span>')[0].split('.'))) for i in res if '<td class="info"><span class="count">' in i ][0]
-		except : ##protected or suspended user
+		except Exception as e: ##protected or suspended user
+			print('Error occcured: ', e)
 			accessible=False
 			INACCESSIBLE.append(toquery[count-1])
 		
