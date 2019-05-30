@@ -176,8 +176,8 @@ print('Took ', time.time()-start)
 ### write files to query via API and Inaccessible users to double check
 print('remains to query ', len(API), ' via the API')
 writeCSVFile([i[0] for i in API],'toquery_viaAPI_'+str(date)+'_'+str(batch_number)+'.csv')
-print('inaccesible because suspended or protected ', len(INACCESSIBLE))
-writeCSVile([i[0] for i in INACCESSIBLE],'impossible_toquery_viaAPI_'+str(date)+'_'+str(batch_number)+'.csv')
+print('inaccesible because suspended or protected or failure ', len(INACCESSIBLE))
+writeCSVile([i[0] for i in INACCESSIBLE],'failed_to_query_'+str(date)+'_'+str(batch_number)+'.csv')
 
 
 
