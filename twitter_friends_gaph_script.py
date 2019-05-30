@@ -28,7 +28,7 @@ cookieJar = http.cookiejar.CookieJar()
 ### Read file of users_ids, users screen_names to query, with info on their friends and follower counts.
 ### Transform it to a python list of tuples
 index=open(users_to_query).read().split('\n')[:-1]
-toquery=sorted([(int(i.split(';')[0]),i.split(';')[1],int(i.split(';')[2]),int(i.split(';')[3])) for i in index],key=itemgetter(0))
+toquery=sorted([(int(i.split(';')[0]),i.split(';')[1]) for i in index],key=itemgetter(0))
 
 ### Subselect screen_names for batch under scrutiny
 toquery_sn = [i[1] for i in toquery]
